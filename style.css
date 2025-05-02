@@ -1,0 +1,205 @@
+/* External CSS */
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: lch(79.26% 23.63 184.56);
+    color: #333;
+  }
+  
+  header {
+    background-color: #333;
+    padding: 10px 0;
+  }
+  
+  .navbar ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+  }
+  
+  .navbar li {
+    display: inline;
+    margin: 0 15px;
+  }
+  
+  .navbar a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  
+  .intro {
+    text-align: center;
+    padding: 50px 20px;
+  }
+  
+  figure {
+    text-align: center;
+    margin-top: 20px;
+    
+  }
+  figure img{
+    border-radius: 50%
+
+  }
+  
+  footer {
+    text-align: center;
+    background-color: #333;
+    color: white;
+    padding: 2px 0;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+  }
+  
+  /* Dark mode */
+  body.dark-mode {
+    background-color: #222;
+    color: #eee;
+  }
+  
+
+
+  /* About Page Styles */
+.about-page {
+    padding: 40px 20px;
+  }
+  
+  .about-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 30px;
+  }
+  
+  .about-left, .about-right {
+    flex: 1 1 300px;
+  }
+  
+  .about-left img {
+    border-radius: 50%;
+  }
+  
+  .about-right {
+    max-width: 600px;
+  }
+  
+
+
+
+  /* Projects Page Styles */
+.projects-page {
+    padding: 40px 20px;
+    text-align: center;
+  }
+  
+  .projects-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 30px;
+  }
+  
+  .project-card {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    padding: 15px;
+    width: 300px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    border-radius: 8px;
+  }
+  
+  .project-card img {
+    width: 100%;
+    border-radius: 8px;
+  }
+  
+  .project-card button {
+    margin-top: 10px;
+    padding: 8px 12px;
+    border: none;
+    background-color: #333;
+    color: #fff;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+  
+
+
+  /* Contact Page Styles */
+.contact-page {
+    padding: 40px 20px;
+    max-width: 600px;
+    margin: auto;
+  }
+  
+  .contact-page form {
+    background-color: #208087;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  }
+  
+  .contact-page input[type="text"],
+  .contact-page input[type="email"],
+  .contact-page textarea {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .contact-page input[type="submit"] {
+    background-color: #333;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+
+
+  /* Survey Page Styles */
+.survey-page {
+  padding: 40px 20px;
+  max-width: 600px;
+  margin: auto;
+}
+
+.survey-page form {
+  background-color: #bc7474;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.survey-page input[type="text"],
+.survey-page textarea {
+  width: 100%;
+  padding: 8px;
+  margin-top: 5px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.survey-page input[type="submit"] {
+  background-color: #b6c4b9;
+  color: rgb(234, 242, 246);
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  
+}
+
+

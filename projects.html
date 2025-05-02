@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Projects</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+
+<body>
+  <header>
+    <nav class="navbar">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About Me</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="survey.html">Survey</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="projects-page">
+    <h1>My Projects</h1>
+
+    <section class="projects-grid">
+
+      <div class="project-card">
+        <img src="WEB PIC.jpg" alt="Project 1" usemap="#projectmap" width="300">
+        <map name="projectmap">
+          <area shape="rect" coords="34,44,270,350" alt="Project Link" href="https://example.com" target="_blank">
+        </map>
+        <h2>Project 1</h2>
+        <button onclick="toggleDetails('details1')">Show/Hide Details</button>
+        <p id="details1" style="display:none;">This is my first amazing web project where I built a fully responsive website using HTML, CSS, and JavaScript.</p>
+      </div>
+
+      <div class="project-card">
+        <img src="Untitled.jpg" alt="Project 2" width="300">
+        <h2>Project 2</h2>
+        <button onclick="toggleDetails('details2')">Show/Hide Details</button>
+        <p id="details2" style="display:none;">This project is  for  machine learning and Artificial intelligence where different skills like use python, R programming, able for data exploratory with aim of price predictions.</p>
+      </div>
+
+      <div class="project-card">
+        <img src="project-plan.jpg" alt="Project 3" width="300">
+        <h2>Project 3</h2>
+        <button onclick="toggleDetails('details3')">Show/Hide Details</button>
+        <p id="details3" style="display:none;">This is a portfolio website to showcase my projects, skills, and experience to potential employers.</p>
+      </div>
+
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 David. All rights reserved.</p>
+  </footer>
+</body>
+</html>

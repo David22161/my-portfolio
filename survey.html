@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+
+<body>
+  <header>
+    <nav class="navbar">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About Me</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="survey.html">Survey</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="survey-page">
+    <h1>Survey Form</h1>
+
+    <form id="surveyForm" onsubmit="return validateSurvey()" novalidate>
+
+      <label for="fullname">Full Name:</label><br>
+      <input type="text" id="fullname" name="fullname" required><br><br>
+
+      <label>How did you come to recorgnise me?</label><br>
+      <input type="radio" id="social" name="source" value="Social Media" required>
+      <label for="social">Social Media</label><br>
+      <input type="radio" id="friend" name="source" value="Friend" required>
+      <label for="friend">Friend</label><br>
+      <input type="radio" id="internet" name="source" value="Internet" required>
+      <label for="internet">Internet</label><br><br>
+
+      <label>What services are you interested in?</label><br>
+      <input type="checkbox" id="web" name="services" value="Web Development">
+      <label for="web">Web Development</label><br>
+      <input type="checkbox" id="design" name="services" value="UI/UX Design">
+      <label for="design">UI/UX Design</label><br>
+      <input type="checkbox" id="seo" name="services" value="SEO Optimization">
+      <label for="seo">machine learning</label><br><br>
+
+      <label for="feedback">Additional Comments:</label><br>
+      <textarea id="feedback" name="feedback" rows="5" placeholder="Write your feedback here..."></textarea><br><br>
+
+      <input type="submit" value="Submit Survey">
+    </form>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 David. All rights reserved.</p>
+  </footer>
+</body>
+</html>
