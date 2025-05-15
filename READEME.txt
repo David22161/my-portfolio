@@ -1,0 +1,37 @@
+
+ # Personal Portfolio Website project
+
+This project is a personal portfolio website designed to showcase my web development skills, projects, and allow potential employers or clients to contact me.
+ 
+The website is fully responsive, accessible, and follows best practices in HTML5, CSS3, and JavaScript.
+  
+   
+
+
+ Tools Used
+- HTML5
+- CSS3
+- JavaScript
+
+ Key Features
+- Responsive design
+- Dark/Light theme toggle
+- Form validations
+- Dynamic project details expansion
+- Survey form
+
+ Challenges Faced
+- Handling regex for form validation: solved by testing multiple patterns.
+- Making responsive layouts: solved using Flexbox and Media Queries.
+
+ 
+
+
+
+
+
+
+
+
+
+
