@@ -1,0 +1,73 @@
+HCCDA TECH ESSENTIALS – CORE LINUX & CLOUD COMMANDS Generated on:
+2026-03-04 22:59:54
+
+==================================================== SSH & LOGIN
+==================================================== ssh root@EIP -
+Remotely logs into the ECS server.
+
+exit - Logs out from the current server session.
+
+==================================================== PACKAGE
+INSTALLATION ==================================================== yum -y
+install httpd - Installs Apache web server automatically.
+
+==================================================== SERVICE MANAGEMENT
+==================================================== systemctl start
+httpd - Starts Apache service.
+
+systemctl enable httpd - Enables Apache to start at boot.
+
+systemctl restart httpd - Restarts Apache service.
+
+systemctl status httpd - Checks Apache service status.
+
+==================================================== DISK MANAGEMENT
+==================================================== fdisk -l - Lists
+all disks and partitions.
+
+fdisk /dev/vdc - Opens partition tool for a disk.
+
+n - Creates a new partition (inside fdisk).
+
+p - Creates a primary partition (inside fdisk).
+
+w - Saves partition changes (inside fdisk).
+
+partprobe - Reloads partition table.
+
+mkfs -t ext4 /dev/vdc1 - Formats partition with ext4 filesystem.
+
+mkdir /mnt/sdc - Creates a mount directory.
+
+mount /dev/vdc1 /mnt/sdc - Mounts partition to directory.
+
+df -TH - Shows mounted disks and filesystem type.
+
+==================================================== FILE & DIRECTORY
+COMMANDS ==================================================== cd
+Desktop/ - Changes directory to Desktop.
+
+cd /var/www/html - Goes to Apache web root directory.
+
+ls - Lists files in current directory.
+
+touch obs-test.txt - Creates empty file.
+
+touch index.html - Creates web page file.
+
+echo SERVER1 > index.html - Writes content into web page file.
+
+==================================================== APACHE
+CONFIGURATION ==================================================== cd
+/etc/httpd/conf - Opens Apache configuration folder.
+
+vim httpd.conf - Edits Apache configuration file.
+
+Listen 8889 - Configures Apache to listen on port 8889.
+
+==================================================== PROCESS CHECKING
+==================================================== ps -ef | grep
+httpd - Checks if Apache process is running.
+
+==================================================== END OF ESSENTIAL
+COMMANDS Master these to handle most HCCDA practical exams.
