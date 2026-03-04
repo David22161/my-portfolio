@@ -1,0 +1,166 @@
+HCIA / HCIP AI LAB – ESSENTIAL MINDSpore CODES Generated on: 2026-03-04
+21:28:05
+
+============================================================ 1. IMPORT
+LIBRARIES ============================================================
+import mindspore as ms import mindspore.dataset as ds import
+mindspore.dataset.vision as vision import mindspore.dataset.transforms
+as transforms import mindspore.nn as nn from mindspore.train import
+Model import numpy as np
+
+============================================================ 2. CREATE
+DATASET ============================================================
+dataset = ds.ImageFolderDataset(“dataset_path”, shuffle=True)
+
+============================================================ 3. IMAGE
+PREPROCESSING PIPELINE
+============================================================ mean =
+[0.4914, 0.4822, 0.4465] std = [0.2023, 0.1994, 0.2010]
+
+transform_img = [ vision.Resize((224, 224)), vision.Rescale(1.0/255.0,
+0.0), vision.Normalize(mean=mean, std=std), vision.HWC2CHW()]
+
+dataset = dataset.map(operations=transform_img, input_columns=“image”)
+
+============================================================ 4. BATCH
+DATASET ============================================================
+dataset = dataset.batch(32) dataset = dataset.repeat(1)
+
+============================================================ 5. CREATE
+DATA ITERATOR
+============================================================ data_iter =
+next(dataset.create_dict_iterator()) images = data_iter[“image”] labels
+= data_iter[“label”] images = images.asnumpy()
+
+============================================================ 6. CHW TO
+HWC CONVERSION
+============================================================ image =
+np.transpose(images[0], (1, 2, 0))
+
+============================================================ 7.
+DENORMALIZATION
+============================================================ image =
+image * std + mean image = np.clip(image, 0, 1)
+
+============================================================ 8. LOAD
+RESNET50 ============================================================
+from src.resnet import resnet50 network = resnet50()
+
+============================================================ 9. MODIFY
+FINAL LAYER (TRANSFER LEARNING)
+============================================================ num_class =
+12 in_channel = network.fc.in_channels network.fc = nn.Dense(in_channel,
+num_class)
+
+============================================================ 10. DEFINE
+LOSS FUNCTION
+============================================================ loss =
+nn.SoftmaxCrossEntropyWithLogits(sparse=True, reduction=“mean”)
+
+============================================================ 11. DEFINE
+OPTIMIZER ============================================================
+optimizer = nn.Adam(network.trainable_params(), learning_rate=0.001) #
+OR # optimizer = nn.Momentum(network.trainable_params(), 0.01, 0.9)
+
+============================================================ 12. WRAP
+INTO MODEL ============================================================
+model = Model(network, loss_fn=loss, optimizer=optimizer, metrics=acc)
+
+============================================================ 13. TRAIN
+MODEL ============================================================
+model.train(10, dataset)
+
+============================================================ 14.
+EVALUATE MODEL
+============================================================
+model.eval(dataset)
+
+============================================================ 15. SAVE
+AND LOAD MODEL
+============================================================
+ms.save_checkpoint(network, “resnet.ckpt”)
+
+param_dict = ms.load_checkpoint(“resnet.ckpt”)
+ms.load_param_into_net(network, param_dict)
+
+============================================================ END OF
+ESSENTIAL AI LAB CODES Master these blocks and you can rebuild most
+Huawei AI lab practicals.
+
+
+
+
+
+
+
+# =========================
+# 1. Import Libraries
+# =========================
+import mindspore as ms
+import mindspore.dataset as ds
+import mindspore.dataset.vision as vision
+import mindspore.nn as nn
+from mindspore.train import Model
+import numpy as np
+
+# =========================
+# 2. Create Dataset
+# =========================
+dataset = ds.ImageFolderDataset("dataset_path", shuffle=True)
+
+# =========================
+# 3. Image Transform Pipeline
+# =========================
+mean = [0.4914, 0.4822, 0.4465]
+std = [0.2023, 0.1994, 0.2010]
+
+transform_img = [
+    vision.Resize((224, 224)),
+    vision.Rescale(1.0/255.0, 0.0),
+    vision.Normalize(mean=mean, std=std),
+    vision.HWC2CHW()
+]
+
+dataset = dataset.map(operations=transform_img, input_columns="image")
+
+# =========================
+# 4. Batch Dataset
+# =========================
+dataset = dataset.batch(32)
+
+# =========================
+# 5. Load ResNet50
+# =========================
+from src.resnet import resnet50
+network = resnet50()
+
+# =========================
+# 6. Modify Final Layer
+# =========================
+num_class = 12
+in_channel = network.fc.in_channels
+network.fc = nn.Dense(in_channel, num_class)
+
+# =========================
+# 7. Define Loss & Optimizer
+# =========================
+loss = nn.SoftmaxCrossEntropyWithLogits(sparse=True, reduction="mean")
+optimizer = nn.Adam(network.trainable_params(), learning_rate=0.001)
+
+# =========================
+# 8. Wrap Into Model
+# =========================
+model = Model(network, loss_fn=loss, optimizer=optimizer, metrics={"acc"})
+
+# =========================
+# 9. Train
+# =========================
+model.train(10, dataset)
+
+# =========================
+# 10. Evaluate
+# =========================
+model.eval(dataset)
+
+
+
